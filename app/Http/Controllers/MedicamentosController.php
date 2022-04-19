@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Medicamentos;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class MedicamentosController extends Controller
 {
@@ -35,7 +36,9 @@ class MedicamentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate(Medicamentos::$rules);
+        $medicamentos = Medicamentos::create($data);
+        return response()->json($medicamentos, 200);
     }
 
     /**
@@ -46,7 +49,8 @@ class MedicamentosController extends Controller
      */
     public function show(Medicamentos $medicamentos)
     {
-        //
+        $medicamentos= Medicamentos::all();
+        return response()->json($medicamentos);
     }
 
     /**
@@ -55,9 +59,13 @@ class MedicamentosController extends Controller
      * @param  \App\Models\Medicamentos  $medicamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medicamentos $medicamentos)
+    public function edit($id)
     {
         //
+        $medicamentos= Medicamentos::find($id);
+        $medicamentos->start = Carbon::createFromFormat('Y-m-d H:i:s',$medicamentos ->start)->format('Y-m-d');
+        $medicamentos->end = Carbon::createFromFormat('Y-m-d H:i:s',$medicamentos ->end)->format('Y-m-d');
+        return response()->json($medicamentos);
     }
 
     /**
@@ -70,6 +78,9 @@ class MedicamentosController extends Controller
     public function update(Request $request, Medicamentos $medicamentos)
     {
         //
+        $request->validate(Medicamentos::$rules);
+        $medicamentos -> update($request->all());
+        return response()->json($medicamentos);
     }
 
     /**
@@ -78,8 +89,12 @@ class MedicamentosController extends Controller
      * @param  \App\Models\Medicamentos  $medicamentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medicamentos $medicamentos)
+    public function destroy($id)
     {
         //
+        $medicamentos= Medicamentos::find($id)->delete();
+
+        return response()->json($medicamentos);
+
     }
 }

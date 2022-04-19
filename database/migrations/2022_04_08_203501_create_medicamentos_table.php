@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table ->string("title",255);
             $table ->text("frecuencia");
-            $table ->timestamp("hora");
+            $table ->string("hora");
             $table ->dateTime("start");
             $table ->dateTime("end");
 
