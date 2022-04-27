@@ -4,11 +4,13 @@
 <div class="container">
 
   <div id="agenda">
-    
+
   </div>
 
 
 </div>
+
+
 
 <!-- Button trigger modal -->
 
@@ -32,9 +34,13 @@
 
           <div class="form-group">
             <label for="id" class="form-label"></label>
-            <input type="hidden" class="form-control"  id="id" name="id" value="" placeholder="id" required>
+            <input type="hidden" class="form-control" id="id" name="id" value="" placeholder="id" required>
           </div>
+          <div class="form-group">
+            <label for="text" class="form-label"></label>
+            <input type="hidden" class="form-control" id="id_user" name="id_user" value="{{ Auth::user()->id }}" placeholder="Escribe un medicamento" required>
 
+          </div>
           <div class="form-group">
             <label for="text" class="form-label">Nombre Medicamento</label>
             <input type="text" class="form-control" id="name" name="title" value="" placeholder="Escribe un medicamento" required>

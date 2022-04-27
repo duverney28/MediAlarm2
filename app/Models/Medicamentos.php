@@ -13,6 +13,7 @@ class Medicamentos extends Model
         
         'title'=>'required',
         'frecuencia'=>'required',
+        'id_user'=> 'required',
         'hora'=>'required',
         'start'=>'required',
         'end'=>'required'
@@ -21,7 +22,7 @@ class Medicamentos extends Model
 
 
     
-    protected $fillable= ['title','frecuencia','hora','start','end'];
+    protected $fillable= ['id_user','title','frecuencia','hora','start','end'];
 
 
 }

@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('medicamentos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("id_user");
             $table ->string("title",255);
             $table ->text("frecuencia");
             $table ->string("hora");
             $table ->dateTime("start");
             $table ->dateTime("end");
+            $table->foreign("id_user")->references("id") ->on("users");
 
             $table->timestamps();
         });

@@ -1,6 +1,4 @@
 
-
-
 var myModal = new bootstrap.Modal(document.getElementById('medicamentos'));
 document.addEventListener('DOMContentLoaded', function () {
   let formulario = document.querySelector("#formulariodeMedicamentos");
@@ -17,17 +15,25 @@ document.addEventListener('DOMContentLoaded', function () {
       right: 'dayGridMonth'
 
     },
+
+ 
     
-   // events: "/medicamentos/mostrar",
-   eventSources: {
-      url: '/medicamentos/mostrar',
-      method: 'POST',
-      extraParams: {
-       _token:formulario._token.value,
-      }
+//events: "/medicamentos/mostrar",
 
-    },
 
+ eventSources: {
+   
+    url: '/medicamentos/mostrar',
+   color: '#3F5ECA',
+  textColor: 'white',
+     failure:function(){
+      alert('there was an error');
+    },     extraParams: {
+            _token:formulario._token.value,
+    }
+  
+ },
+    
     dateClick: function (info) {
       formulario.reset();
       formulario.start.value=info.dateStr;
@@ -45,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         (respuesta) => {
           formulario.start.value=respuesta.data.start;
           formulario.end.value= respuesta.data.end;
-
+          formulario.id_user.value=respuesta.data.id_user;
           formulario.id.value=respuesta.data.id;
           formulario.title.value=respuesta.data.title;
           formulario.frecuencia.value=respuesta.data.frecuencia;
@@ -64,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     }
-
+    
 
 
   });

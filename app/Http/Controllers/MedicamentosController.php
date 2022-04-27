@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Medicamentos;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Faker\Provider\Medical;
+use Illuminate\Support\Facades\App;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class MedicamentosController extends Controller
 {
@@ -15,8 +19,30 @@ class MedicamentosController extends Controller
      */
     public function index()
     {
+       
         return view('medicamentos.index');
     }
+
+    public function indexs()
+    {        
+        
+        $data['medicamentos']=Medicamentos::paginate();
+        return view('mis medicamentos.index',$data);
+    }
+
+    
+    public function pdf()
+    {        
+        
+        $data= Medicamentos::paginate();
+        $pdf = PDF::loadView('mis medicamentos.pdf',['data'=>$data]);
+        return $pdf->download('___agendaMedicamentos.pdf');
+
+    
+    }
+
+   
+  
 
     /**
      * Show the form for creating a new resource.
@@ -49,9 +75,46 @@ class MedicamentosController extends Controller
      */
     public function show(Medicamentos $medicamentos)
     {
+
+        
         $medicamentos= Medicamentos::all();
         return response()->json($medicamentos);
     }
+
+    public function showmediById($id){
+
+        $medicamentos= Medicamentos::find($id);
+        return response()->json($medicamentos);
+    }
+
+    public function listar(){
+
+        $agenda=Medicamentos::all();
+        $nueva_agenda=[];
+        
+        foreach($agenda as $value){
+            $nueva_agenda[]=[ 
+                "id"=>$value->id,
+                "id_user"=>$value->id_user."".$value->id_user,
+                "title"=>$value->title."".$value->title,
+                "start"=>$value->start."".$value->start,
+                "end"=>$value->end."".$value->end,
+               "extendedProps"=>[
+                    "id_user"=>$value->id_user
+
+               ]
+
+
+            ];
+        }
+        return response()->json($nueva_agenda);
+    }
+
+        
+    
+
+    
+  
 
     /**
      * Show the form for editing the specified resource.
