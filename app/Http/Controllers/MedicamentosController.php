@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Faker\Provider\Medical;
 use Illuminate\Support\Facades\App;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Illuminate\Support\Facades\Auth;
 
 class MedicamentosController extends Controller
 {
@@ -19,30 +19,34 @@ class MedicamentosController extends Controller
      */
     public function index()
     {
-       
+
         return view('medicamentos.index');
     }
 
-    public function indexs()
-    {        
-        
-        $data['medicamentos']=Medicamentos::paginate();
-        return view('mis medicamentos.index',$data);
+    public function showallMediById()
+    {
+
+
+        $data['medicamentos'] = Medicamentos::where("id_user", Auth()->user()->id)->get();
+        return view('mis medicamentos.index', $data);
     }
 
-    
+    public function ShowMap(){
+
+        return view('misfarmacias.index');
+    }
+
+
     public function pdf()
-    {        
-        
-        $data= Medicamentos::paginate();
-        $pdf = PDF::loadView('mis medicamentos.pdf',['data'=>$data]);
-        return $pdf->download('___agendaMedicamentos.pdf');
+    {
 
-    
+        $data = Medicamentos::paginate();
+        $pdf = PDF::loadView('mis medicamentos.pdf', ['data' => $data]);
+        return $pdf->stream('___agendaMedicamentos.pdf');
     }
 
-   
-  
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -76,33 +80,45 @@ class MedicamentosController extends Controller
     public function show(Medicamentos $medicamentos)
     {
 
-        
-        $medicamentos= Medicamentos::all();
+
+        $medicamentos = Medicamentos::all();
         return response()->json($medicamentos);
     }
 
-    public function showmediById($id){
+    
+    public function listByIdCalendar(){
 
-        $medicamentos= Medicamentos::find($id);
+
+        $medicamentos = Medicamentos::where("id_user", Auth()->user()->id)->get();
+        return response()->json($medicamentos);
+        
+    }
+
+
+    public function showmediById($id)
+    {
+
+        $medicamentos = Medicamentos::find($id);
         return response()->json($medicamentos);
     }
 
-    public function listar(){
+    public function listar()
+    {
 
-        $agenda=Medicamentos::all();
-        $nueva_agenda=[];
-        
-        foreach($agenda as $value){
-            $nueva_agenda[]=[ 
-                "id"=>$value->id,
-                "id_user"=>$value->id_user."".$value->id_user,
-                "title"=>$value->title."".$value->title,
-                "start"=>$value->start."".$value->start,
-                "end"=>$value->end."".$value->end,
-               "extendedProps"=>[
-                    "id_user"=>$value->id_user
+        $agenda = Medicamentos::all();
+        $nueva_agenda = [];
 
-               ]
+        foreach ($agenda as $value) {
+            $nueva_agenda[] = [
+                "id" => $value->id,
+                "id_user" => $value->id_user . "" . $value->id_user,
+                "title" => $value->title . "" . $value->title,
+                "start" => $value->start . "" . $value->start,
+                "end" => $value->end . "" . $value->end,
+                "extendedProps" => [
+                    "id_user" => $value->id_user
+
+                ]
 
 
             ];
@@ -110,11 +126,11 @@ class MedicamentosController extends Controller
         return response()->json($nueva_agenda);
     }
 
-        
-    
 
-    
-  
+
+
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -125,9 +141,9 @@ class MedicamentosController extends Controller
     public function edit($id)
     {
         //
-        $medicamentos= Medicamentos::find($id);
-        $medicamentos->start = Carbon::createFromFormat('Y-m-d H:i:s',$medicamentos ->start)->format('Y-m-d');
-        $medicamentos->end = Carbon::createFromFormat('Y-m-d H:i:s',$medicamentos ->end)->format('Y-m-d');
+        $medicamentos = Medicamentos::find($id);
+        $medicamentos->start = Carbon::createFromFormat('Y-m-d H:i:s', $medicamentos->start)->format('Y-m-d');
+        $medicamentos->end = Carbon::createFromFormat('Y-m-d H:i:s', $medicamentos->end)->format('Y-m-d');
         return response()->json($medicamentos);
     }
 
@@ -142,7 +158,7 @@ class MedicamentosController extends Controller
     {
         //
         $request->validate(Medicamentos::$rules);
-        $medicamentos -> update($request->all());
+        $medicamentos->update($request->all());
         return response()->json($medicamentos);
     }
 
@@ -155,9 +171,8 @@ class MedicamentosController extends Controller
     public function destroy($id)
     {
         //
-        $medicamentos= Medicamentos::find($id)->delete();
+        $medicamentos = Medicamentos::find($id)->delete();
 
         return response()->json($medicamentos);
-
     }
 }

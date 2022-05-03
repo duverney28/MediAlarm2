@@ -32,9 +32,10 @@ Route::middleware(['auth'])->group(function () {
 
     
 Route::get('mismedicamentos/pdf',[App\Http\Controllers\MedicamentosController::class, 'pdf'])->name('mismedicamentos.pdf');
-Route::get('/mismedicamentos', [App\Http\Controllers\MedicamentosController::class, 'indexs'])->name('mismedicamentos');
+Route::get('/mismedicamentos', [App\Http\Controllers\MedicamentosController::class, 'showallMediById'])->name('mismedicamentos');
+Route::get('/misfarmacias', [App\Http\Controllers\MedicamentosController::class, 'ShowMap'])->name('misfarmacias');
 Route::get('/medicamentos', [App\Http\Controllers\MedicamentosController::class, 'index'])->name('medicamentos');
-Route::get('/medicamentos/mostrar', [App\Http\Controllers\MedicamentosController::class, 'show']);
+Route::get('/medicamentos/mostrar', [App\Http\Controllers\MedicamentosController::class, 'listByIdCalendar']);
 Route::get('/medicamentos/listar/{id}', [App\Http\Controllers\MedicamentosController::class, 'showmediById']);
 Route::post('/medicamentos/registro', [App\Http\Controllers\MedicamentosController::class,'store']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

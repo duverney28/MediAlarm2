@@ -15,6 +15,7 @@
                     <th>Nombre Medicamento</th>
                     <th>Frecuencia</th>
                     <th>hora</th>
+                   
 
                 </thead>
 
@@ -26,7 +27,7 @@
                         <td>{{$medi->title}}</td>
                         <td>{{$medi->frecuencia}}</td>
                         <td>{{$medi->hora}}</td>
-
+                      
 
                     </tr>
                     @endforeach
