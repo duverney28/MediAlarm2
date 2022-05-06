@@ -23,6 +23,16 @@ class MedicamentosController extends Controller
         return view('medicamentos.index');
     }
 
+    public function Mymusica()
+    {
+        return view('mimusica.index');
+    }
+
+    public function informacion()
+    {
+        return view('informacion.index');
+    }
+
     public function showallMediById()
     {
 
@@ -31,7 +41,8 @@ class MedicamentosController extends Controller
         return view('mis medicamentos.index', $data);
     }
 
-    public function ShowMap(){
+    public function ShowMap()
+    {
 
         return view('misfarmacias.index');
     }
@@ -85,13 +96,13 @@ class MedicamentosController extends Controller
         return response()->json($medicamentos);
     }
 
-    
-    public function listByIdCalendar(){
+
+    public function listByIdCalendar()
+    {
 
 
         $medicamentos = Medicamentos::where("id_user", Auth()->user()->id)->get();
         return response()->json($medicamentos);
-        
     }
 
 

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
  eventSources: {
    
     url: '/medicamentos/mostrar',
-   color: '#3F5ECA',
+   color: '#008000',
   textColor: 'white',
      failure:function(){
       alert('there was an error');

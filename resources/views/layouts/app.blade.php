@@ -12,7 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <!-- <script src="{{ asset('js/musica.js') }}" defer></script> -->
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -20,11 +21,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/locales-all.js"></script>
+    <script> var asset_global='{{asset("/")}}'; </script>
 
 
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/estilomusica.css') }}" rel="stylesheet">
+   
+    
+    
+   
 </head>
 
 <body>
@@ -75,10 +82,16 @@
                             <a class="nav-link" href="{{ route('medicamentos') }}">{{ __('Agendar Medicamentos') }}</a>
                         </li>
 
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('mimusica') }}">{{ __('Musica') }}</a>
+                        </li>
                         
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('misfarmacias') }}">{{ __('Encuentrame') }}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('informacion') }}">{{ __('Infórmate') }}</a>
                         </li>
 
 
@@ -109,10 +122,14 @@
             </div>
         </nav>
         <script src="{{ asset('js/agenda.js') }}" defer></script>
+        <script src="{{ asset('js/musica.js') }}" defer></script>
+        <main class="py-4">
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 </body>
+
+
 
 </html>
