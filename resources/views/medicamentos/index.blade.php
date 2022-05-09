@@ -39,7 +39,6 @@
           <div class="form-group">
             <label for="text" class="form-label"></label>
             <input type="hidden" class="form-control" id="id_user" name="id_user" value="{{ Auth::user()->id }}" placeholder="Escribe un medicamento" required>
-
           </div>
           <div class="form-group">
             <label for="text" class="form-label">Nombre Medicamento</label>
@@ -52,15 +51,26 @@
           </div>
           <div class="form-group">
             <label for="text" class="form-label">Hora</label>
-            <input type="text" class="form-control" id="hora" name="hora" value="" placeholder="Hora toma del medicamento" required>
+            <input type="time" class="form-control" id="hora" name="hora" value="" placeholder="Hora toma del medicamento" required>
           </div>
           <div class="form-group">
             <label for="start" class="form-label">start</label>
             <input type="date" class="form-control" id="start" name="start" value="" placeholder="inicio toma medicamento" required>
           </div>
+         
           <div class="form-group">
             <label for="end" class="form-label">end</label>
             <input type="date" class="form-control" id="end" name="end" value="" placeholder="final toma medicamento" required>
+          </div>
+
+          <div class="form-group">
+            <label for="color" class="form-label">Fondo</label>
+            <input type="color" class="form-control" id="color" name="color" value="" placeholder="" required>
+          </div>
+
+          <div class="form-group">
+            <label for="textColor" class="form-label">Color del Texto</label>
+            <input type="color" class="form-control" id="textColor" name="textColor" value="" placeholder="" required>
           </div>
 
         </form>

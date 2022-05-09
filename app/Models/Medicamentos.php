@@ -16,13 +16,16 @@ class Medicamentos extends Model
         'id_user'=> 'required',
         'hora'=>'required',
         'start'=>'required',
-        'end'=>'required'
-
+        'end'=>'required',
+        'color'=>'required',
+        'textColor' =>'required'
+    
+        
     ];
 
 
     
-    protected $fillable= ['id_user','title','frecuencia','hora','start','end'];
+    protected $fillable= ['id_user','title','frecuencia','hora','start','end',"color","textColor"];
 
 
 }

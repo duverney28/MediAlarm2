@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
  eventSources: {
    
     url: '/medicamentos/mostrar',
-   color: '#008000',
-  textColor: 'white',
+   
      failure:function(){
       alert('there was an error');
     },     extraParams: {
@@ -49,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       then(
         (respuesta) => {
+
+          formulario.textColor.value=respuesta.data.textColor;
+          formulario.color.value=respuesta.data.color;
           formulario.start.value=respuesta.data.start;
           formulario.end.value= respuesta.data.end;
           formulario.id_user.value=respuesta.data.id_user;
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
           formulario.frecuencia.value=respuesta.data.frecuencia;
           formulario.hora.value=respuesta.data.hora
 
-          console.log(respuesta.data.start);
+         
 
           myModal.show();
         }

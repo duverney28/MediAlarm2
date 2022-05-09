@@ -10,15 +10,12 @@
 
 
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
-<!-- 
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
@@ -135,7 +132,7 @@
     
 <!------ Include the above in your HEAD tag ---------->
 
-<!-- <section class="container">
+<section class="container">
      
     <div class="row active-with-click">
         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -162,9 +159,9 @@
                     <h4>
                         Social
                     </h4>
-                    <!-- <a target=_parent href="https://scielo.org/es/" class="fa fa-fw fa-facebook"></a>
-                    -->
-                    <!-- <a  href="https://scielo.org/es/" class="fa fa-share fa-4x" aria-hidden="true"></a>
+                   <a target=_parent href="https://scielo.org/es/" class="fa fa-fw fa-facebook"></a>
+             
+                   <a  href="https://scielo.org/es/" class="fa fa-share fa-4x" aria-hidden="true"></a>
                 </div>
             </article>
         </div>
@@ -197,8 +194,8 @@
                         Social
                     </h4>
                     <a target=_parent href="https://scielo.org/es/" class="fa fa-fw fa-facebook"></a>
-                    -->
-                    <!-- <a  href="https://scielo.org/es/" class="fa fa-share fa-4x" aria-hidden="true"></a>
+           
+          <a  href="https://scielo.org/es/" class="fa fa-share fa-4x" aria-hidden="true"></a>
                 </div>
             </article>
         </div>
@@ -210,155 +207,6 @@
 
 <!------ Include the above in your HEAD tag ---------->
 
-<section class="head">
-    <div class="container">
-        <h2 class="text-center"><span>Search Result Panel in Bootstrap 4</span>Created with <i class="fa fa-heart"></i> from Grafreez</h2>
-    </div>
-</section>
-<div class="clearfix"></div>
-<section class="search-box">
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12 listing-block">
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$799,000<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$799,000<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-            <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-            <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-        <div class="media">
-            <div class="fav-box"><i class="fa fa-heart-o" aria-hidden="true"></i>
-</div>
-              <img class="d-flex align-self-start" src="https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                <div class="price">$506,400<small>New York</small></div>
-                <div class="stats">
-                    <span><i class="fa fa-arrows-alt"></i>1678 Sq ft</span>
-                    <span><i class="fa fa-bath"></i>2 Beadrooms</span>
-                </div>
-                <div class="address">4062 Walnut Hill Drive
-            Cincinnati</div>
-              </div>
-            </div>
-            
-
-            
-
-            
-		</div>
-		 <div class="col-md-7 map-box mx-10000 px-200">
-		    
-                
-    <x-maps-leaflet  :centerPoint="['lat'=> 4.815048600779418, 'long' => -75.69549549390601]" :zoomLevel="13" :markers="[['lat'=>  4.815048600779418, 'long' => -75.69549549390601]]">
-      
-    </x-maps-leaflet>
-            
-		</div> 
-
-        
-	</div>
-</div>
-</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
-<script>
-    $(function(){
-    $('.listing-block').slimScroll({
-        height: '1180px'
-    });
-});
-</script>
 
 </section>
 
