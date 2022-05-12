@@ -79,10 +79,13 @@ return array (
     'normal' => $rootDir . '/lib/fonts/DejaVuSerif',
   ),
   'nunito' => array(
-    'normal' => $fontDir . '/nunito_normal_34247b3036b716234db5ab3f26800c05',
+    'normal' => $fontDir . '/nunito_normal_6c0bd57bf447898b6d51683e027e0634',
   ),
   'rock salt' => array(
     'normal' => $fontDir . '/rock_salt_normal_b9376ac35d793775755ed4c488ab14ab',
+  ),
+  'fontawesome' => array(
+    'normal' => $fontDir . '/fontawesome_normal_a07c54af815ea54af1b5e5aa13cc5f8b',
   ),
 );
 }; ?>

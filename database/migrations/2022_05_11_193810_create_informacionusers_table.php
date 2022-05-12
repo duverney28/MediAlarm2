@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('medicamentos', function (Blueprint $table) {
+        Schema::create('informacionusers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("id_user");
-            $table ->string("title",255);
-            $table ->text("textColor");
-            $table ->text("color");
-            $table ->text("frecuencia");
-            $table ->string("hora");
-            $table ->dateTime("start");
-            $table ->dateTime("end");
+            $table ->string("nacionalidad",30);
+            $table ->string("ciudad",30);
+            $table ->string("alergias",30);
             $table->foreign("id_user")->references("id") ->on("users");
             $table->timestamps();
         });
@@ -35,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medicamentos');
+        Schema::dropIfExists('informacionusers');
     }
 };

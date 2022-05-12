@@ -75,7 +75,7 @@
     <meta charset="utf-8">
     <title>MediAlarm</title>
 
-    <link rel="stylesheet" href="web13661.css">
+
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
 </head>
 
@@ -88,8 +88,9 @@
 
                 <div data-layer="69bbe460-3b92-467f-bf30-7a92efad773a" class="activeState">
                     <div data-layer="ea34836a-db55-42ba-b9db-f4476bd1c991" class="rectangulo620fdb52d0"></div>
-                    <div data-layer="31fb878b-5f71-436d-907b-171fcff3c145" class="login">Login</div>
+                    <div data-layer="31fb878b-5f71-436d-907b-171fcff3c145" class="login">iniciar sesion</div>
                 </div>
+                
                 <div data-layer="6d22b615-716d-41c2-8ba7-33d396f38824" class="hoverState">
                     <div data-layer="d3412e95-1166-4966-b26b-160200416920" class="rectangulo64"></div>
                     <div data-layer="cc3264c5-e9e3-4e17-bfca-c492bbace222" class="loginb45efec8">Login</div>
@@ -126,7 +127,7 @@
             </div>
             <div data-layer="78214b0d-eeef-4504-b0ff-8935e53f93c2" class="medialarm">MediAlarm</div>
             <div data-layer="6ba6e78a-ce86-4727-ad13-93694273b814" class="grupo10"></div>
-            <div data-layer="9176c839-6627-41f1-b5e4-8294cdf9663d" class="xOlvidasteLaContrasena">¿ Olvidaste la contraseña ?</div>
+            <a href="{{ route('register') }}"><div data-layer="9176c839-6627-41f1-b5e4-8294cdf9663d"  class="xOlvidasteLaContrasena">¿ Olvidaste la contraseña ?</div></a>
             <svg data-layer="d8c58855-71d3-406e-9847-b8a3027ed843" preserveAspectRatio="none" viewBox="4127.71826171875 3070.601806640625 614.18310546875 1.5" class="trazado234">
                 <path d="M 4741.1513671875 3071.351806640625 L 4128.46826171875 3071.351806640625" />
             </svg>

@@ -29,6 +29,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
+    
+
 Route::get('/informacion', [App\Http\Controllers\MedicamentosController::class, 'informacion'])->name('informacion');
 Route::get('/mimusica', [App\Http\Controllers\MedicamentosController::class, 'Mymusica'])->name('mimusica');
 Route::get('mismedicamentos/pdf',[App\Http\Controllers\MedicamentosController::class, 'pdf'])->name('mismedicamentos.pdf');
@@ -38,6 +40,7 @@ Route::get('/medicamentos', [App\Http\Controllers\MedicamentosController::class,
 Route::get('/medicamentos/mostrar', [App\Http\Controllers\MedicamentosController::class, 'listByIdCalendar']);
 Route::get('/medicamentos/listar/{id}', [App\Http\Controllers\MedicamentosController::class, 'showmediById']);
 Route::post('/medicamentos/registro', [App\Http\Controllers\MedicamentosController::class,'store']);
+Route::post('/profile/registro', [App\Http\Controllers\InformacionusersController::class,'store']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/medicamentos/editar/{id}', [App\Http\Controllers\MedicamentosController::class,'edit']);
 Route::post('/medicamentos/actualizar/{medicamentos}', [App\Http\Controllers\MedicamentosController::class,'update']);

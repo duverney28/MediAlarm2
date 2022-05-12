@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    
+
     <!-- <script src="{{ asset('js/musica.js') }}" defer></script> -->
 
     <!-- Fonts -->
@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/locales-all.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
     <script>
         var asset_global = '{{asset("/")}}';
     </script>
@@ -40,11 +42,14 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark  shadow-sm">
             <div class="container">
+
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h1>MediAlarm</h1>
+                    <h1>MediAlarm</h1> <i class="fa fa-user-md" aria-hidden="true"></i>
+
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -95,42 +100,85 @@
                             <a class="nav-link" href="{{ route('informacion') }}">{{ __('Infórmate') }}</a>
                         </li>
 
-
-
-
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+
+                            <a class="dropdown-item" id="btn">
+
+                                <script>
+                                    document.getElementById("btn").addEventListener("click", function() {
+                                        myModals.show();
+
+                                    });
+                                </script>
+                                {{ __('mi cuenta') }}
+                            </a>
+
+
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Cerrar Sesión') }}
-                                </a>
+                                {{ __('Cerrar Sesión') }}
+                            </a>
 
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
-                    </ul>
 
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                 </div>
+                </li>
+                @endguest
+                </ul>
+
             </div>
-        </nav>
-        <script src="{{ asset('js/agenda.js') }}" defer></script>
-        <script src="{{ asset('js/musica.js') }}" defer></script>
-        <main class="py-4">
-            <main class="py-4">
-                @yield('content')
-            </main>
     </div>
+    </nav>
+    <script src="{{ asset('js/agenda.js') }}" defer></script>
+    <script src="{{ asset('js/musica.js') }}" defer></script>
+    <main class="py-4">
+        <main class="py-4">
+            @yield('content')
+        </main>
+        </div>
+
+
+
+
+
 </body>
 
-
-
 </html>
+
+
+
+<div class="modal" tabindex="-1" id="ventanamodaltwo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mi Información</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="form-group">
+                    <label for="text" class="form-label">Nombre Usuario</label>
+                    <input type="text" class="form-control" id="id_user" name="id_user" value="{{ Auth::user()->name }}" placeholder="" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="text" class="form-label">Correo Electronico</label>
+                    <input type="text" class="form-control" id="correo" name="correo" value="{{ Auth::user()->email }}" placeholder="" disabled>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>

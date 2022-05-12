@@ -202,7 +202,7 @@
         
     </div>
 
-    <script src="{{ asset('js/cards.js') }}" defer></script> -->
+    <script src="{{ asset('js/cards.js') }}" defer></script> 
 
 
 <!------ Include the above in your HEAD tag ---------->

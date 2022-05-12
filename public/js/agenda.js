@@ -1,10 +1,12 @@
-
+var myModals = new bootstrap.Modal(document.getElementById('ventanamodaltwo'));
 var myModal = new bootstrap.Modal(document.getElementById('medicamentos'));
 document.addEventListener('DOMContentLoaded', function () {
   let formulario = document.querySelector("#formulariodeMedicamentos");
+  let fomulario_two= document.querySelector("#formularioPerfiles");
   var calendarEl = document.getElementById('agenda');
   var calendar = new FullCalendar.Calendar(calendarEl, {
 
+    
     initialView: 'dayGridMonth',
     locale: "es",
     displayEventTime:false,
@@ -16,10 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     },
 
- 
-    
 //events: "/medicamentos/mostrar",
-
 
  eventSources: {
    
@@ -57,9 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
           formulario.id.value=respuesta.data.id;
           formulario.title.value=respuesta.data.title;
           formulario.frecuencia.value=respuesta.data.frecuencia;
-          formulario.hora.value=respuesta.data.hora
-
-         
+          formulario.hora.value=respuesta.data.hora;
 
           myModal.show();
         }
@@ -95,8 +92,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
+  
+  document.getElementById("btnGuardarProfile").addEventListener("click", function () {
+    enviarDatosProfile("profile/registro");
 
-    
+  });
+
+ 
     function enviarDatos(url){
 
       const datos= new FormData(formulario);
@@ -117,7 +119,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
+    function enviarDatosProfile(url){
+
+      const data= new FormData(fomulario_two);
+
+      axios.post(url, data).
+
+      then(
+        (respuesta) => {
+
+
+          console.log("se agrego succesfull");
+          myModals.hide();
+          
+        }
+      ).catch(
+        error => {
+          if (error.response) {
+            console.log(error.response.data);
+
+          }
+        });
+    }
+
   });
+
+
+
+
+
+
+
+  
+ 
+
+
+  
 
   
 

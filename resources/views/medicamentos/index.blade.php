@@ -57,7 +57,7 @@
             <label for="start" class="form-label">start</label>
             <input type="date" class="form-control" id="start" name="start" value="" placeholder="inicio toma medicamento" required>
           </div>
-         
+
           <div class="form-group">
             <label for="end" class="form-label">end</label>
             <input type="date" class="form-control" id="end" name="end" value="" placeholder="final toma medicamento" required>
