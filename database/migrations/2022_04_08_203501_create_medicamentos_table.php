@@ -19,7 +19,10 @@ return new class extends Migration
             $table ->string("title",255);
             $table ->text("textColor");
             $table ->text("color");
-            $table ->text("frecuencia");
+            $table ->text("numeropastillas");
+            $table ->text("tipomedicamento");
+            $table ->text("dosismedi");
+            $table ->text("fechavencimiento");
             $table ->string("hora");
             $table ->dateTime("start");
             $table ->dateTime("end");

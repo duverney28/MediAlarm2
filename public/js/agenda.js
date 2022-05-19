@@ -55,9 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
           formulario.id_user.value=respuesta.data.id_user;
           formulario.id.value=respuesta.data.id;
           formulario.title.value=respuesta.data.title;
-          formulario.frecuencia.value=respuesta.data.frecuencia;
+          formulario.numeropastillas.value=respuesta.data.numeropastillas;
           formulario.hora.value=respuesta.data.hora;
-
+          formulario.fechavencimiento.value=respuesta.data.fechavencimiento;
+          formulario.tipomedicamento.value=respuesta.data.tipomedicamento;
+         formulario.dosismedi.value=respuesta.data.dosismedi;
+         
           myModal.show();
         }
       ).catch(
@@ -93,10 +96,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   
-  document.getElementById("btnGuardarProfile").addEventListener("click", function () {
-    enviarDatosProfile("profile/registro");
+  // document.getElementById("btnGuardarProfile").addEventListener("click", function () {
+  //   enviarDatosProfile("profile/registro");
 
-  });
+  // });
 
  
     function enviarDatos(url){

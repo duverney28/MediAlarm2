@@ -46,13 +46,53 @@
           </div>
 
           <div class="form-group">
-            <label for="validationDefault01" class="form-label">Frecuencia</label>
-            <input type="text" class="form-control" id="frecuencia" name="frecuencia" value="" placeholder="Escribe la frecuencia de toma del medicamento" required>
+            <select  class="form-control" id="tipomedicamento" name="tipomedicamento"  class="form-select" aria-label="Default select example">
+              <option selected>Tipo Medicamento</option>
+              <option value="pastilla">pastilla</option>
+              <option value="solucion">solucion</option>
+              <option value="inyeccion">inyeccion</option>
+              <option value="gotas">gotas</option>
+              <option value="inhalador">inhalador</option>
+            </select>
           </div>
+
+          
+
+          <!-- <div class="form-group">
+            <select  class="form-control" id="dosismedi" name="dosismedi" class="form-select" aria-label="Default select example">
+              <option selected>Dosis del Medicamento</option>
+              <option value="">gramos</option>
+              <option value="">IU</option>
+              <option value="">mcg</option>
+              <option value="">mEQ</option>
+              <option value="">mg/ml</option>
+              <option value="">mcg/ml</option>
+              <option value="">mg</option>
+              <option value="">mL %</option>
+              
+            </select>
+          </div> -->
+          
+         <div class="form-group">
+            <label for="text" class="form-label">Dosis del Medicamento</label>
+            <input type="text" class="form-control" id="dosismedi" name="dosismedi" value="" placeholder="gr,IU,mcg,mEq,mg.." required>
+          </div> 
+          
+          <div class="form-group">
+            <label for="validationDefault01" class="form-label">Numero de pastillas/gotas/solucion..</label>
+            <input type="text" class="form-control" id="numeropastillas" name="numeropastillas" value="" placeholder="escribe el numero de medicamento" required>
+          </div>
+
+          <div class="form-group">
+            <label for="text" class="form-label">Fecha vencimiento del Medicamento</label>
+            <input type="date" class="form-control" id="fechavencimiento" name="fechavencimiento" value="" placeholder="fecha vencimiento del medicamento" required>
+          </div>
+
           <div class="form-group">
             <label for="text" class="form-label">Hora</label>
             <input type="time" class="form-control" id="hora" name="hora" value="" placeholder="Hora toma del medicamento" required>
           </div>
+
           <div class="form-group">
             <label for="start" class="form-label">start</label>
             <input type="date" class="form-control" id="start" name="start" value="" placeholder="inicio toma medicamento" required>

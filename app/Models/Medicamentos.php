@@ -12,18 +12,21 @@ class Medicamentos extends Model
     static $rules = [
 
         'title' => 'required',
-        'frecuencia' => 'required',
         'id_user' => 'required',
         'hora' => 'required',
         'start' => 'required',
         'end' => 'required',
         'color' => 'required',
-        'textColor' => 'required'
+        'textColor' => 'required',
+        'numeropastillas' => 'required',
+        'tipomedicamento' => 'required',
+        'dosismedi' => 'required',
+        'fechavencimiento' => 'required'
 
 
     ];
 
 
 
-    protected $fillable = ['id_user', 'title', 'frecuencia', 'hora', 'start', 'end', "color", "textColor"];
+    protected $fillable = ['id_user', 'title', 'numeropastillas', 'hora', 'start', 'end', "color", "textColor","tipomedicamento","dosismedi","fechavencimiento"];
 }
