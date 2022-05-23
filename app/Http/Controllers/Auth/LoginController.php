@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
@@ -19,7 +21,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
+    protected $stateless = false;
     use AuthenticatesUsers;
 
     /**
@@ -49,9 +51,11 @@ class LoginController extends Controller
     // google callback
     public function handleGoogleCallback()
     {
-        $user = Socialite::driver('google')->user();
+       $user = Socialite::driver('facebook')->user();
+        $this->_registerOrLoginUser($user);
+      
     }
-    
+
 
     //facebook login
 
@@ -64,5 +68,27 @@ class LoginController extends Controller
     public function handleFacebookCallback()
     {
         $user = Socialite::driver('facebook')->user();
+        $this->_registerOrLoginUser($user);
+       
+    }
+
+    protected function _registerOrLoginUser($data)
+    {
+        $userExist = User::where('external_id', $data->id)->where('external_auth', 'google')->first();
+        if ($userExist) {
+            Auth::login($userExist);
+        } else {
+            $userNew = User::create([
+                'name' => $data->name,
+                'email' => $data->email,
+                'avatar' => $data->avatar,
+                'external_id' => $data->id,
+                'external_auth' => 'google',
+            ]);
+
+            Auth::login($userNew);
+        }
+
+        return redirect('/home');
     }
 }

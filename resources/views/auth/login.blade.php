@@ -134,7 +134,7 @@
         <svg data-layer="46958229-417c-49a9-a4bb-626c69efa084" preserveAspectRatio="none" viewBox="4127.71826171875 3070.601806640625 140.0498046875 1.5" class="trazado401">
             <path d="M 4267.01806640625 3071.351806640625 L 4128.46826171875 3071.351806640625" />
         </svg>
-        <a href="{{route('login.google')}}"> <button type="button" data-layer="6864e539-77b4-4d78-8e90-052c11f6d261" name="btngoogle" class="btngoogle">
+        <a href="{{route('login-gooogle')}}"> <button type="button" data-layer="6864e539-77b4-4d78-8e90-052c11f6d261" name="btngoogle" class="btngoogle">
             <div data-layer="4b7ce808-d343-44ac-8d16-82c1710cf6f0" class="activeStatef969076c">
                 <div data-layer="c3a216fa-3bdd-45b9-87bf-905578776c74" class="rectangulo629f044ece"></div>
                 <div data-layer="fd151e6a-58f7-4064-ae8d-c2234a68d1a3" class="login598f898b">Login</div>
@@ -161,7 +161,7 @@
             </div>
             </a>
         </button>
-        <a href="{{ route('login.facebook') }}"></a><button type="button" data-layer="bec5857c-09f3-43ec-ab44-ba9dd2f5d727" name="btnfacebook" class="btnfacebook">
+        <a href="{{ route('login-facebook') }}"> <button type="button" data-layer="bec5857c-09f3-43ec-ab44-ba9dd2f5d727" name="btnfacebook" class="btnfacebook">
             <div data-layer="ae5a3987-8d8e-4de0-98a3-01470f4340b2" class="activeState581063ff">
                 <div data-layer="903c3766-b704-4668-82ff-a7149cab0476" class="rectangulo62553b5c4b"></div>
                 <div data-layer="2517e3c3-42fe-458b-bb80-8faeaea551df" class="loginf165f20b">Login</div>

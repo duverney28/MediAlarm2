@@ -28,43 +28,67 @@ Route::get('/mismedicamentos', function () {
 
 
 //login google
-Route::get('login/google',[App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
-Route::get('login/google/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
+Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
 
 //login facebook
-Route::get('login/facebook',[App\Http\Controllers\Auth\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
-Route::get('login/facebook/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallback']);
+Route::get('login/facebook', [App\Http\Controllers\Auth\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallback']);
 
+//google
+Route::get('/login-google', function () {
+    return Socialite::driver('google')->redirect();
+})->name('login-gooogle');
 
+Route::get('/google-callback', function () {
 
-// Route::get('/login-google', function () {
-//     return Socialite::driver('google')->redirect();
-// });
+    $user = Socialite::driver('google')->user();
 
-// Route::get('/google-callback', function () {
+    $userExist = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
+    if ($userExist) {
+        Auth::login($userExist);
+    } else {
+        $userNew = User::create([
+            'name' => $user->name,
+            'email' => $user->email,
+            'avatar' => $user->avatar,
+            'external_id' => $user->id,
+            'external_auth' => 'google',
+        ]);
 
-//     $user = Socialite::driver('google')->user();
+        Auth::login($userNew);
+    }
 
-//     $userExist = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
-//     if ($userExist) {
-//         Auth::login($userExist);
-//     } else {
-//         $userNew = User::create([
-//             'name' => $user->name,
-//             'email' => $user->email,
-//             'avatar' => $user->avatar,
-//             'external_id' => $user->id,
-//             'external_auth' => 'google',
-//         ]);
+    return redirect('/medicamentos');
+});
 
-//         Auth::login($userNew);
-//     }
-    
+//facebook
 
-//     return redirect('/home');
+Route::get('/login-facebook', function () {
+    return Socialite::driver('facebook')->redirect();
+})->name('login-facebook');
 
-// });
+Route::get('/facebook-callback', function () {
 
+    $user = Socialite::driver('facebook')->user();
+
+    $userExist = User::where('external_id', $user->id)->where('external_auth', 'facebook')->first();
+    if ($userExist) {
+        Auth::login($userExist);
+    } else {
+        $userNew = User::create([
+            'name' => $user->name,
+            'email' => $user->email,
+            'avatar' => $user->avatar,
+            'external_id' => $user->id,
+            'external_auth' => 'facebook',
+        ]);
+
+        Auth::login($userNew);
+    }
+
+    return redirect('/medicamentos');
+});
 
 
 
