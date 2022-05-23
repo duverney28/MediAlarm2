@@ -34,7 +34,15 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_OAUTH_ID'),
         'client_secret' => env('GOOGLE_OAUTH_KEY'),
-        'redirect' => '/google-callback',
+        'redirect' => 'http://localhost/MediAlarm/public/login/google/callback',
     ],
 
+   // htpp://localhost/MEDIALARM/public/login/google/callbac
+    'facebook' => [
+        'client_id' => env('FACEBOOK_OAUTH_ID'),
+        'client_secret' => env('FACEBOOK_OAUTH_KEY'),
+        'redirect' => 'https://localhost/MediAlarm/public/login/facebook/callback',
+    ],
+
+    
 ];

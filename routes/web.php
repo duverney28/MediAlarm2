@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\MedicamentosController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -26,34 +27,43 @@ Route::get('/mismedicamentos', function () {
 })->middleware("auth");
 
 
+//login google
+Route::get('login/google',[App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
 
-Route::get('/login-google', function () {
-    return Socialite::driver('google')->redirect();
-});
+//login facebook
+Route::get('login/facebook',[App\Http\Controllers\Auth\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallback']);
 
-Route::get('/google-callback', function () {
 
-    $user = Socialite::driver('google')->user();
 
-    $userExist = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
-    if ($userExist) {
-        Auth::login($userExist);
-    } else {
-        $userNew = User::create([
-            'name' => $user->name,
-            'email' => $user->email,
-            'avatar' => $user->avatar,
-            'external_id' => $user->id,
-            'external_auth' => 'google',
-        ]);
+// Route::get('/login-google', function () {
+//     return Socialite::driver('google')->redirect();
+// });
 
-        Auth::login($userNew);
-    }
+// Route::get('/google-callback', function () {
+
+//     $user = Socialite::driver('google')->user();
+
+//     $userExist = User::where('external_id', $user->id)->where('external_auth', 'google')->first();
+//     if ($userExist) {
+//         Auth::login($userExist);
+//     } else {
+//         $userNew = User::create([
+//             'name' => $user->name,
+//             'email' => $user->email,
+//             'avatar' => $user->avatar,
+//             'external_id' => $user->id,
+//             'external_auth' => 'google',
+//         ]);
+
+//         Auth::login($userNew);
+//     }
     
 
-    return redirect('/home');
+//     return redirect('/home');
 
-});
+// });
 
 
 
