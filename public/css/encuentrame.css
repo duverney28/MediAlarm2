@@ -3,11 +3,15 @@
 
 h2{float:left; width:100%; color:#fff; margin-bottom:40px; font-size: 14px; position:relartive; z-index:3; margin-top:30px}
 h2 span{font-family: 'Libre Baskerville', serif; display:block; font-size:45px; text-transform:none; margin-bottom:20px; margin-top:30px; font-weight:700}
-h2 a{color:#fff; font-weight:bold;}
+h2 a{color:rgb(0, 0, 0); font-weight:bold;}
 
-body{background:  #393251;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom,  #393251,  #393251);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom,  #393251,   #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+span{
+    color: #232323;
+}
+
+body{background:  #ffffff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom,  #ffffff,  #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom,  #ffffff,   #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .head{float:left;width:100%;}
 .search-box{width:90%; margin:0 auto 40px; box-shadow:10px 13px 0 rgba(0,0,0,0.2);}
@@ -20,9 +24,9 @@ background: linear-gradient(to bottom,  #393251,   #ffffff); /* W3C, IE 10+/ Edg
 .media .price small{display:block; font-size:17px; color:#232323;}
 .media .stats{float:left; width:100%; margin-top:10px;}
 .media .stats span{float:left; margin-right:10px; font-size:15px;}
-.media .stats span i{margin-right:7px; color: #393251;}
+.media .stats span i{margin-right:7px; color: #ffffff;}
 .media .address{float:left; width:100%;font-size:14px; margin-top:5px; color:#888;}
 .media .fav-box{position:absolute; right:10px; font-size:20px; top:4px; color:#E74C3C;}
 .col-md-7{height: 50%; width: 100%;} 
 
-.map-box{background-color: #393251;}
+.map-box{background-color: #ffffff;}

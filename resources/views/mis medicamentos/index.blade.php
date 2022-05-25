@@ -13,8 +13,14 @@
                 <thead>
 
                     <th>Nombre Medicamento</th>
-                    <th>Frecuencia</th>
+                    <th>Tipo de Medicamento</th>
+                    <th>Dosis del Medicamento</th>
+                    <th>Número de Dosis del Medicamento</th>
+                    <th>Fecha de Vencimiento del Medicamento</th>
                     <th>hora</th>
+                    <th>Inicio Tratamiendo</th>
+                    <th>Fin del tratamiento</th>
+                 
                    
 
                 </thead>
@@ -25,8 +31,14 @@
                     <tr>
 
                         <td>{{$medi->title}}</td>
-                        <td>{{$medi->frecuencia}}</td>
+                        <td>{{$medi->tipomedicamento}}</td>
+                        <td>{{$medi->dosismedi}}</td>
+                        <td>{{$medi->numeropastillas}}</td>
+                        <td>{{$medi->fechavencimiento}}</td>
                         <td>{{$medi->hora}}</td>
+                        <td>{{$medi->start}}</td>
+                        <td>{{$medi->end}}</td>
+                     
                       
 
                     </tr>

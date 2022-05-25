@@ -21,9 +21,9 @@
         <div class="listado-canciones">
             <div class="cancion">
                 <div class="titulo">
-                    Cancion 1
+                   Embrace-SAPPHEIROS
                 </div>
-                <div class="play" id="musicaepica">
+                <div class="play" id="song1">
                     <span class="material-icons">
                         play_circle
                     </span>
@@ -34,7 +34,7 @@
                     </span>
                 </div>
                 <div class="descargar">
-                    <a href=" {{ asset('musica/musicaepica.mp3') }}" download>
+                    <a href=" {{ asset('musica/song1.mp3') }}" download>
                         <span class="material-icons">
                             file_download
                         </span>
@@ -43,9 +43,9 @@
             </div>
             <div class="cancion">
                 <div class="titulo">
-                Cancion 2
+               Colapso-Kevin Kaarl
                 </div>
-                <div class="play" id="imagine">
+                <div class="play" id="song2">
                     <span class="material-icons">
                         play_circle
                     </span>
@@ -57,7 +57,7 @@
                 </div>
               
                 <div class="descargar">
-                    <a href="  {{ asset('musica/musicaepica.mp3') }}" download>
+                    <a href="  {{ asset('musica/song2.mp3') }}" download>
                         <span class="material-icons">
                             file_download
                         </span>
@@ -66,9 +66,9 @@
             </div>
             <div class="cancion">
                 <div class="titulo">
-                    Cancion 3
+                    Reminisce-Frad-MXM
                 </div>
-                <div class="play" id="Breatha">
+                <div class="play" id="song3">
                     <span class="material-icons">
                         play_circle
                     </span>
@@ -79,7 +79,7 @@
                     </span>
                 </div>
                 <div class="descargar">
-                    <a href="  {{ asset('musica/musicaepica.mp3') }}" download>
+                    <a href="  {{ asset('musica/song3.mp3') }}" download>
                         <span class="material-icons">
                             file_download
                         </span>
