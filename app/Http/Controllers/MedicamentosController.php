@@ -51,7 +51,7 @@ class MedicamentosController extends Controller
     public function pdf()
     {
 
-        $data = Medicamentos::paginate();
+        $data = Medicamentos::where("id_user", Auth()->user()->id)->get();
         $pdf = PDF::loadView('mis medicamentos.pdf', ['data' => $data]);
         return $pdf->stream('___agendaMedicamentos.pdf');
     }

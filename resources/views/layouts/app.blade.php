@@ -100,39 +100,42 @@
                             <a class="nav-link" href="{{ route('informacion') }}">{{ __('Infórmate') }}</a>
                         </li>
 
+
+
                         <li class="nav-item dropdown">
                             <img src=" {{ Auth::user()->avatar }}" alt=" {{ Auth::user()->name }}" style="border:1px solid #cccccc; border-radius:20px; width:39px; height:auto; float:left; margin: right 12px;">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
+                            <ul class="dropdown-menu">
+
+                                <a class="dropdown-item" id="btn">
+
+                                    <script>
+                                        document.getElementById("btn").addEventListener("click", function() {
+                                            myModals.show();
+
+                                        });
+                                    </script>
+                                    {{ __('mi cuenta') }}
+                                </a>
 
 
-                            <a class="dropdown-item" id="btn">
-
-                                <script>
-                                    document.getElementById("btn").addEventListener("click", function() {
-                                        myModals.show();
-
-                                    });
-                                </script>
-                                {{ __('mi cuenta') }}
-                            </a>
-
-
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Cerrar Sesión') }}
-                            </a>
+                                    {{ __('Cerrar Sesión') }}
+                                </a>
 
 
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                 </div>
                 </li>
                 @endguest
+                </ul>
                 </ul>
 
             </div>
