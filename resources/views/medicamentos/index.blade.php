@@ -46,6 +46,11 @@
           </div>
 
           <div class="form-group">
+            <label for="hidden" class="form-label"></label>
+            <input type="hidden" class="form-control" id="" name="" value="" placeholder="">
+          </div>
+
+          <div class="form-group">
             <select  class="form-control" id="tipomedicamento" name="tipomedicamento"  class="form-select" aria-label="Default select example">
               <option selected>Tipo Medicamento</option>
               <option value="pastilla">pastilla</option>

@@ -98,6 +98,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/informacion', [App\Http\Controllers\MedicamentosController::class, 'informacion'])->name('informacion');
+    Route::get('/downloadpdf', [App\Http\Controllers\MedicamentosController::class, 'DownloadPdf'])->name('Donwload');
     Route::get('/mimusica', [App\Http\Controllers\MedicamentosController::class, 'Mymusica'])->name('mimusica');
     Route::get('mismedicamentos/pdf', [App\Http\Controllers\MedicamentosController::class, 'pdf'])->name('mismedicamentos.pdf');
     Route::get('/mismedicamentos', [App\Http\Controllers\MedicamentosController::class, 'showallMediById'])->name('mismedicamentos');

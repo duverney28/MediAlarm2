@@ -51,6 +51,10 @@
                     {{_('Generar PDF')}}
                 </a>
 
+                <a href="{{route ('Donwload') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
+                    {{_('Descargar PDF')}}
+                </a>
+
            
         </div>
 

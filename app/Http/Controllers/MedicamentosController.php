@@ -23,6 +23,12 @@ class MedicamentosController extends Controller
         return view('medicamentos.index');
     }
 
+    public function DownloadPdf(){
+        $data = Medicamentos::where("id_user", Auth()->user()->id)->get();
+        $pdf = PDF::loadView('mis medicamentos.pdf', ['data' => $data]);
+        return $pdf->download('___agendaMedicamentos.pdf');
+    }
+
     public function Mymusica()
     {
         return view('mimusica.index');

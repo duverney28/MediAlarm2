@@ -43,9 +43,9 @@
             </div>
             <div class="cancion">
                 <div class="titulo">
-               Colapso-Kevin Kaarl
+              555 Mhz- Ángel de la Suerte 
                 </div>
-                <div class="play" id="song2">
+                <div class="play" id="songs2">
                     <span class="material-icons">
                         play_circle
                     </span>
@@ -57,7 +57,7 @@
                 </div>
               
                 <div class="descargar">
-                    <a href="  {{ asset('musica/song2.mp3') }}" download>
+                    <a href="  {{ asset('musica/songs2.mp3') }}" download>
                         <span class="material-icons">
                             file_download
                         </span>
@@ -66,9 +66,9 @@
             </div>
             <div class="cancion">
                 <div class="titulo">
-                    Reminisce-Frad-MXM
+                    555 Hz Ascensión Espiritual Alta Vibración - Emiliano Bruguera
                 </div>
-                <div class="play" id="song3">
+                <div class="play" id="songs3">
                     <span class="material-icons">
                         play_circle
                     </span>
